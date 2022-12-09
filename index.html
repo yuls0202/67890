@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>new image()로 이미지 로딩하기</title>
+    <script>
+        let files=["img/랫서팬더.jpg","img/사막여우.jpg","img/호랑이.jpg"]
+        let imgs=new Array();
+        for(let i =0; i<files.length; i++){
+            imgs[i]=new Image();
+            imgs[i].src=files[i]
+        }
+        let next= 1;
+        function chage(image){
+            image.src=imgs[next].src;
+            next++;
+            next %= imgs.length;
+        }
+    </script>
+</head>
+<body>
+    <h3>new image()로 이미지 로딩하기</h3>
+    <hr>
+    이미지를 클릭하면 다음 이미지를 보여줍니다.<br>
+    <img src="img/랫서팬더.jpg" alt="동물이미지"
+    style="border: 20px ridge wheat" width="200" height="200" onclick="change(this)">
+</body>
+</html>
